@@ -1,0 +1,117 @@
+.Nav {
+  height: 100%;
+  position: relative;
+
+  @include from(desktop) {
+    width: 100%;
+  }
+
+
+
+  &-list {
+    position: fixed;
+    z-index: $z-tooltip;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    list-style: none;
+    height: 100vh;
+    width: 90vw;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    transform: translateX(95vw);
+    opacity: 0;
+    background: linear-gradient(to right, #0072ff, #00c6ff);
+    color: inherit;
+    transition: all .5s;
+
+    &:after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: black;
+      opacity: .3;
+      z-index: $z-tooltip;
+
+      @include from(desktop) {
+        display: none;
+      }
+    }
+
+    @include from(phablet) {
+      align-items: center;
+    }
+
+    @include from(desktop) {
+      background: initial;
+      position: static;
+      height: $header-height;
+      list-style: none;
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-end;
+      align-items: center;
+      transform: translateX(0);
+      opacity: 1;
+    }
+
+  }
+
+  &-item {
+    margin: .5rem 2rem;
+    position: relative;
+    z-index: $z-fixed;
+
+    @include from(desktop) {
+      margin: 1rem;
+    }
+  }
+
+  &-link {
+    width: 100%;
+    height: 100%;
+    font-size: 24px;
+    text-transform: uppercase;
+    font-weight: $weight-bold;
+    transition: border-bottom 1s;
+    color: white;
+    position: relative;
+
+    @include from(desktop) {
+      font-size: .9rem;
+      font-weight: $weight-light;
+      text-transform: initial;
+
+
+    }
+
+    &:after {
+      content: '';
+      display: block;
+      position: absolute;
+      bottom: -5px;
+      width: 100%;
+      height: 2px;
+      background-color: white;
+      transform: scale(0);
+      transform-origin: center;
+      transition: transform .5s;
+    }
+
+    &:hover:after {
+      transform: scale(1);
+
+    }
+
+    &.active::after {
+      transform: scale(1);
+    }
+
+  }
+}

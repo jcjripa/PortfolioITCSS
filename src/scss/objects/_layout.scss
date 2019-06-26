@@ -1,0 +1,17 @@
+.LayoutContainer {
+  max-width: $max-width;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.TextCenter {
+  text-align: center;
+}
+
+.FlexCenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

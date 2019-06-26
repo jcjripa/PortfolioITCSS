@@ -1,0 +1,48 @@
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes arrowAnimate {
+  to {
+    bottom: 0;
+    opacity: 1;
+  }
+}
+
+@keyframes animateBar {
+  from {
+    width: 0;
+  }
+
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes slider {
+
+  0%,
+  20%,
+  100% {
+    transform: translateX(0%);
+  }
+
+  25%,
+  45%,
+  75%,
+  95% {
+    transform: translateX(-100%);
+  }
+
+  50%,
+  70% {
+    transform: translateX(-200%);
+  }
+}
+

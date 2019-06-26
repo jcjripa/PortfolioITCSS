@@ -1,0 +1,20 @@
+.BackToTop {
+  display: none;
+  position: fixed;
+  right: 1.5rem;
+  bottom: 1.5rem;
+  opacity: 1;
+  transition: opacity .25s ease-in-out;
+  z-index: $z-fixed;
+
+  & .fas{
+    font-size: 2rem;
+  }
+  &.is-active {
+
+    @include from(desktop){
+      display: block;
+    }
+
+  }
+}

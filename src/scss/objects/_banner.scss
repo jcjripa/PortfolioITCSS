@@ -1,0 +1,135 @@
+.Banner {
+  height: 100vh;
+  width: 100%;
+  background-image: linear-gradient(to right, #4facfe 0%, #00f2fe 100%);
+
+  @include from(desktop) {
+    background: url('/media/banner.jpg');
+    background-attachment: fixed;
+    background-size: cover;
+
+  }
+
+  &-wrapper {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &-particles {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: $z-normal;
+
+    &:after {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100vh;
+      background: #000000;
+      opacity: .4;
+
+      @include from(desktop) {
+        opacity: .5;
+      }
+
+    }
+  }
+
+  &-content {
+    position: relative;
+    z-index: $z-tooltip;
+    text-align: center;
+    color: white;
+
+    @include from(desktop) {
+      margin-right: 10rem;
+      margin-left: 10rem;
+    }
+
+    &-tittle {
+      margin: 1rem 0;
+      font-size: 1.8rem;
+      animation: fadeIn 1s both;
+
+      & span {
+        font-weight: $weight-bold;
+
+        @include from(desktop) {
+          color: white;
+        }
+      }
+
+      @include from(tablet) {
+        margin: 2rem 0;
+        font-size: 3rem;
+      }
+    }
+
+    &-textAnimate {
+      margin: 1rem 0;
+      font-size: 1rem;
+      font-weight: $weight-medium;
+      animation: fadeIn 1s 1s both;
+
+      @include from(tablet) {
+        margin: 2rem 0;
+        font-size: 1.3rem;
+      }
+    }
+
+    &-icons {
+      margin: 1rem 0;
+      animation: fadeIn 1s 2s both;
+
+      & ul {
+        display: inline-block;
+        cursor: pointer;
+        height: 100%;
+      }
+
+      &-link {
+        width: 2.2rem;
+        height: 2.2rem;
+        border-radius: 50%;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        background-color: rgba(0, 0, 0, 0.3);
+        font-size: 1.3rem;
+        margin: 0 .2rem;
+        transition: background-color .2s;
+        transition: transform .3s;
+
+        @include from(desktop) {
+          width: 2.5rem;
+          height: 2.5rem;
+        }
+
+
+        &:hover {
+          background-color: rgba(0, 0, 0, 1);
+          transform: scale(1.2);
+        }
+      }
+    }
+  }
+
+  &-arrow {
+    position: absolute;
+    z-index: $z-normal;
+    color: white;
+    bottom: 2rem;
+    font-size: 2rem;
+    opacity: 0;
+    animation: arrowAnimate 2s 3s both infinite ease-in-out;
+
+  }
+}

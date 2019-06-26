@@ -1,0 +1,65 @@
+.Body {
+  &.is-active {
+    overflow: hidden;
+  }
+}
+
+.Wrapper {
+  &.is-active{
+    filter: blur(7px);
+  }
+}
+
+.Header {
+  &.is-active {
+    background-color: white;
+    color: #444444;
+    box-shadow: 0 0 .2rem #444444;
+    .Header-brand-logo{
+      color: #444444;
+    }
+    .Header-brand-toggler{
+
+        &-bars{
+          color: #444444;
+          background: white;
+          border: 2px solid;
+        }
+    }
+    .Nav-link{
+      @include from(desktop){
+          color: #444444;
+      }
+      &:after{
+        @include from(desktop){
+          background-color: #444444;
+        }
+      }
+    }
+
+  }
+
+  &-brand-logo{
+    &.is-active{
+      filter: blur(7px);
+    }
+  }
+
+  &-brand-toggler-bars{
+    &.is-active{
+      background: transparent;
+      border: none;
+      color: white;
+    }
+  }
+}
+
+.Nav {
+
+  &-list {
+    &.is-active {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+}

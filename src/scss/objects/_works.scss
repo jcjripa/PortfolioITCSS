@@ -1,0 +1,108 @@
+.Works {
+  width: 100%;
+  height: 100%;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+  @include from(desktop) {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+    margin-bottom: 3rem;
+  }
+
+  &-gridContainer {
+    display: grid;
+    grid-gap: 1rem;
+    grid-template: repeat(8,10rem) / repeat(auto-fill, minmax(200px, 1fr));
+
+    @include from(desktop) {
+      grid-template: repeat(4,10rem) / repeat(auto-fill, minmax(200px, 1fr));
+    }
+  }
+
+  &-item{
+    padding: .5rem .5rem 0;
+    border-radius: 5px;
+    position: relative;
+
+
+    &:before{
+      content: '';
+      position: absolute;
+      top: 0;
+      left:0;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      background:#f2f2f2;
+      transform: scale(.8);
+      transition: all .2s;
+      border-radius: 5px;
+      z-index: $z-back;
+    }
+
+    &:hover{
+      &:before{
+        transform: scale(1);
+        opacity: 1;
+      }
+
+    }
+
+    &-bg{
+
+      height:calc(100% - 2rem);
+      border-radius: 7px;
+      overflow: hidden;
+      position: relative;
+      box-shadow: 0 0 .1rem #444;
+
+      &:after{
+        content: '';
+        width:100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left:0;
+        background: black;
+        opacity: 0;
+        transition: all .2s;
+
+      }
+      &:hover:after{
+          opacity: .2;
+      }
+
+      & img{
+        width: 100%;
+        min-height: 100%;
+      }
+
+    }
+
+    &-btn{
+      width: 100%;
+      height: 2rem;
+      display:flex;
+      justify-content:flex-end;
+      align-items:center;
+
+      & i{
+
+        border-radius: 50%;
+        padding: .3rem;
+        color: #8e8e8e;
+        transition: all .2s;
+
+        &:hover{
+          background:#e4e4e4;
+        }
+      }
+    }
+  }
+
+  @for $i from 1 through 3{
+    .level-#{$i}{
+      grid-row: span #{$i};
+    }
+  }
+}

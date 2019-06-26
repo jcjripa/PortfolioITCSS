@@ -1,0 +1,111 @@
+*,
+*::before,
+*:after {
+  box-sizing: border-box;
+}
+html {
+  box-sizing: border-box;
+  font-size: 16px;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  min-width: 300px;
+  text-size-adjust: 100%;
+}
+
+body {
+  margin : 0;
+  font-family : $font-family;
+}
+
+
+html,
+body,
+p,
+ol,
+ul,
+li,
+dl,
+dt,
+dd,
+blockquote,
+figure,
+fieldset,
+legend,
+textarea,
+pre,
+iframe,
+hr,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  padding: 0;
+}
+
+
+button,
+input,
+select,
+textarea {
+  margin: 0;
+}
+
+
+
+audio {
+  max-width: 100%;
+}
+
+iframe {
+  border: 0;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+td,
+th {
+  padding: 0;
+  text-align: left;
+}
+
+
+article,
+aside,
+figure,
+footer,
+header,
+hgroup,
+section {
+
+  display: block;
+}
+
+button,
+input,
+select,
+textarea{
+
+  font-family: $font-family;
+}
+
+
+code,
+pre{
+
+  -moz-osx-font-smoothing: auto;
+  -webkit-font-smoothing: auto;
+  font-family: $family-code;
+}
+
+img{
+
+  max-width: 100%;
+  vertical-align: baseline;
+}
+
